@@ -32,17 +32,19 @@ class Login extends StatelessWidget  {
                  Text("Welcome",textScaleFactor: 3) ,
                     SizedBox(height: 10,),
                  TextFormField(textAlign: TextAlign.center,
-                   decoration: InputDecoration(border: const OutlineInputBorder(
+                   decoration: const InputDecoration(border: OutlineInputBorder(
                      borderRadius: BorderRadius.all(Radius.circular(20))),
-                      hintText: "Enter your login id", labelText: "Login id" ),),
+                      hintText: "Enter your login id", labelText: "Login id", 
+                      
+                     ),),
 
-                     SizedBox(height: 10,),
+                    const SizedBox(height: 10,),
                   TextFormField(textAlign: TextAlign.center, obscureText: true,
-                   decoration: InputDecoration(border: const OutlineInputBorder(
+                   decoration:const InputDecoration(border: OutlineInputBorder(
                      borderRadius: BorderRadius.all(Radius.circular(20))
                    ),hintText: "Enter your password", labelText: "Password"),
                  ),
-                    SizedBox(height: 20,),
+                    const SizedBox(height: 20,),
 
                     Container(
                       width: width*0.5  ,
