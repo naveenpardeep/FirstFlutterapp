@@ -13,17 +13,20 @@ class Login extends StatelessWidget  {
     return Scaffold(
 
       body: Center (
+        
 
       child: Column(
-
+            
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
 
 
         children:  [
+          
            Container(
-             width: width*0.5,
+             width: width*0.4,
              height: height*0.5,
+             
              child: Column(
                children: [
 
@@ -47,9 +50,10 @@ class Login extends StatelessWidget  {
                     const SizedBox(height: 20,),
 
                     Container(
-                      width: width*0.5  ,
-                      height: height*0.08,
-                      child : 
+                     // width: width*0.5  ,
+                     // height: height*0.,
+                       child: Column(children: [
+                           
                             ElevatedButton(
                          
                         style: ButtonStyle(
@@ -64,6 +68,10 @@ class Login extends StatelessWidget  {
                             },
                              child: Text('Login',textScaleFactor: 2),
                        ),
+                       SizedBox(height: 5,),
+                       TextButton(onPressed: (){}, child: Text("Forgot Password ? click here")),
+                       ],)
+                     
                       ),
 
                ],
