@@ -48,10 +48,12 @@ class Home extends StatelessWidget {
                       child: TextFormField(
                         textAlign: TextAlign.center,
                         decoration: const InputDecoration(
+
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.all(Radius.circular(20))),
                           hintText: "First Name",
                           labelText: "First Name",
+                          suffixIcon: Icon(Icons.app_registration_rounded),
                         ),
                       ),
                     ),

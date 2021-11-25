@@ -3,15 +3,39 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 
-class ForgotPassword extends StatelessWidget {
+class ForgotPassword extends StatefulWidget {
+
+
+  const ForgotPassword({Key? key}) : super(key: key);
+
+  @override
+  ForgotpasswordState createState() {
+  return ForgotpasswordState();
+  }
+  }
+
+// Define a corresponding State class.
+// This class holds data related to the form.
+  class ForgotpasswordState extends State<ForgotPassword> {
+
+    final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+
     // to get system width height
-    double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
+    double width = MediaQuery
+        .of(context)
+        .size
+        .width;
+    double height = MediaQuery
+        .of(context)
+        .size
+        .height;
     return Scaffold(
 
-        body: Center(
+        body: Form(
+          key: _formKey,
+          child: Center(
 
             child: Container(
 
@@ -22,10 +46,10 @@ class ForgotPassword extends StatelessWidget {
                     SingleChildScrollView(
                       child:
                       Positioned(
-                          top: width*0.4,
-                          bottom: width*0.5,
-                          right: width*0.1,
-                          left: width*0.1,
+                          top: width * 0.4,
+                          bottom: width * 0.5,
+                          right: width * 0.1,
+                          left: width * 0.1,
 
                           child:
                           Container(
@@ -54,10 +78,20 @@ class ForgotPassword extends StatelessWidget {
                                     decoration: const InputDecoration(
                                       border: OutlineInputBorder(
                                           borderRadius:
-                                          BorderRadius.all(Radius.circular(20))),
+                                          BorderRadius.all(
+                                              Radius.circular(20))),
                                       hintText: "Enter your email id",
                                       labelText: "Enter your email id",
                                     ),
+
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return 'Please enter email id';
+                                      }
+
+                                      return null;
+                                    },
+
                                   ),
                                 ),
                                 const SizedBox(
@@ -76,16 +110,28 @@ class ForgotPassword extends StatelessWidget {
                                           style: ButtonStyle(
                                             shape: MaterialStateProperty.all(
                                                 RoundedRectangleBorder(
-                                                    borderRadius: BorderRadius.circular(20))),
+                                                    borderRadius: BorderRadius
+                                                        .circular(20))),
                                             backgroundColor:
-                                            MaterialStateProperty.all(Colors.lightBlue[50]),
+                                            MaterialStateProperty.all(
+                                                Colors.lightBlue[50]),
                                             foregroundColor:
-                                            MaterialStateProperty.all<Color>(Colors.blue),
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.blue),
                                           ),
                                           onPressed: () {
                                             //on click functionality here
+                                            // Validate returns true if the form is valid, or false otherwise.
+                                            if (_formKey.currentState!.validate()) {
+                                              // If the form is valid, display a snackbar. In the real world,
+                                              // you'd often call a server or save the information in a database.
+                                              ScaffoldMessenger.of(context).showSnackBar(
+                                                const SnackBar(content: Text('Processing Data')),
+                                              );
+                                            }
                                           },
-                                          child: Text('Send OTP', textScaleFactor: 2),
+                                          child: Text(
+                                              'Send OTP', textScaleFactor: 2),
                                         ),
 
 
@@ -102,7 +148,10 @@ class ForgotPassword extends StatelessWidget {
             )
 
 
-
-        ));
+          )
+        )
+    );
   }
+
+
 }
