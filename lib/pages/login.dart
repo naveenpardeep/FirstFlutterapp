@@ -16,100 +16,100 @@ class Login extends StatelessWidget {
       children: <Widget>[
         SingleChildScrollView(
           child: Positioned(
-              top: width * 0.4,
-              bottom: width * 0.5,
-              right: width * 0.1,
-              left: width * 0.1,
-              child: Container(
-                width: width * 0.9,
-                // height: height * 0.9,
-                padding: const EdgeInsets.all(15.0),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: Colors.cyan[50],
+            top: width * 0.4,
+            bottom: width * 0.5,
+            right: width * 0.1,
+            left: width * 0.1,
+            child: Container(
+              width: width * 0.9,
+              // height: height * 0.9,
+              padding: const EdgeInsets.all(15.0),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(50),
+                color: Colors.cyan[50],
+              ),
+              child: Column(children: [
+                const Text("Welcome",
+                    style: TextStyle(color: Colors.blue), textScaleFactor: 3),
+                const SizedBox(
+                  height: 10,
                 ),
-                child: Column(
-                  children: [
-                    Text("Welcome",
-                        style: TextStyle(color: Colors.blueGrey),
-                        textScaleFactor: 3),
-                    SizedBox(
-                      height: 10,
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.cyan),
+                  child: TextFormField(
+                    textAlign: TextAlign.center,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      hintText: "User Name or Email id",
+                      labelText: "User Name or Email id",
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.cyan),
-                      child: TextFormField(
-                        textAlign: TextAlign.center,
-                        decoration: const InputDecoration(
-                          border: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(20))),
-                          hintText: "User Name or Email id",
-                          labelText: "User Name or Email id",
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.cyan),
-                      child: TextFormField(
-                        textAlign: TextAlign.center,
-                        obscureText: true,
-                        decoration: const InputDecoration(
-                            border: OutlineInputBorder(
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20))),
-                            hintText: "Enter your password",
-                            labelText: "Password"),
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Container(
-                        // width: width*0.5  ,
-                        // height: height*0.,
-                        child: Column(
-                      children: [
-                        const Icon(Icons.arrow_downward, color: Colors.black),
-                        ElevatedButton(
-                          style: ButtonStyle(
-                            shape: MaterialStateProperty.all(
-                                RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(20))),
-                            backgroundColor:
-                                MaterialStateProperty.all(Colors.lightBlue[50]),
-                            foregroundColor:
-                                MaterialStateProperty.all<Color>(Colors.blue),
-                          ),
-                          onPressed: () {
-                            //on click functionality here
-                          },
-                          child: const Text('Login', textScaleFactor: 2),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ForgotPassword()));
-                            },
-                            child: Text("Forgot Password ? click here")),
-                      ],
-                    )),
-                  ],
+                  ),
                 ),
-              )),
-        )
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.cyan),
+                  child: TextFormField(
+                    textAlign: TextAlign.center,
+                    obscureText: true,
+                    decoration: const InputDecoration(
+                        border: OutlineInputBorder(
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(20))),
+                        hintText: "Enter your password",
+                        labelText: "Password"),
+                  ),
+                ),
+                const SizedBox(
+                  height: 20,
+                ),
+
+                // width: width*0.5  ,
+                // height: height*0.,
+
+                Stack(clipBehavior: Clip.none, children: [
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20))),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.lightBlue[50]),
+                      foregroundColor:
+                          MaterialStateProperty.all<Color>(Colors.blue),
+                    ),
+                    onPressed: () {
+                      //on click functionality here
+                    },
+                    child: const Text('Login', textScaleFactor: 2),
+                  ),
+                  const Positioned(
+                    right: 10,
+                    left: 10,
+                    top: -9,
+                    child: Icon(Icons.arrow_downward, color: Colors.blue),
+                  ),
+                ]),
+                const SizedBox(
+                  height: 5,
+                ),
+                TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ForgotPassword()));
+                    },
+                    child: Text("Forgot Password ? click here")),
+              ]),
+            ),
+          ),
+        ),
       ],
     ))));
   }
