@@ -62,11 +62,12 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.center,
                     keyboardType: TextInputType.text,
                     decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        hintText: "Family Name",
-                        labelText: "Family Name"),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      hintText: "Family Name",
+                      labelText: "Family Name",
+                      suffixIcon: Icon(Icons.app_registration_rounded),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -79,11 +80,12 @@ class Home extends StatelessWidget {
                   child: TextFormField(
                     textAlign: TextAlign.center,
                     decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        hintText: "Middle Name",
-                        labelText: "Middle Name"),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      hintText: "Middle Name",
+                      labelText: "Middle Name",
+                      suffixIcon: Icon(Icons.app_registration_rounded),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -97,11 +99,12 @@ class Home extends StatelessWidget {
                     textAlign: TextAlign.center,
                     keyboardType: TextInputType.emailAddress,
                     decoration: const InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        hintText: "Email Id",
-                        labelText: "Email Id"),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      hintText: "Email Id",
+                      labelText: "Email Id",
+                      suffixIcon: Icon(Icons.email),
+                    ),
                   ),
                 ),
                 const SizedBox(
@@ -120,7 +123,8 @@ class Home extends StatelessWidget {
                                 BorderRadius.all(Radius.circular(20))),
                         // style: TextStyle(color: Colors. red),
                         hintText: "Mobile Number",
-                        labelText: "Mobile Number"),
+                        labelText: "Mobile Number",
+                        suffixIcon: Icon(Icons.phone)),
                   ),
                 ),
                 const SizedBox(
@@ -128,10 +132,13 @@ class Home extends StatelessWidget {
                 ),
 
                 Container(
-                    // width: width*0.5  ,
-                    // height: height*0.,
-                    child: Column(
-                  children: [
+                  // width: width*0.5  ,
+                  // height: height*0.,
+                  child: Column(children: [
+                    const Icon(
+                      Icons.arrow_downward,
+                      color: Colors.black,
+                    ),
                     ElevatedButton(
                       style: ButtonStyle(
                         shape: MaterialStateProperty.all(RoundedRectangleBorder(
@@ -144,7 +151,7 @@ class Home extends StatelessWidget {
                       onPressed: () {
                         //on click functionality here
                       },
-                      child: Text('Submit', textScaleFactor: 2),
+                      child: const Text('Submit', textScaleFactor: 2),
                     ),
                     const SizedBox(
                       height: 5,
@@ -157,8 +164,8 @@ class Home extends StatelessWidget {
                           );
                         },
                         child: const Text("Already have account click here")),
-                  ],
-                ))
+                  ]),
+                )
               ]))
         ])))));
   }
